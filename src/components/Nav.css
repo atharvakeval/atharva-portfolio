@@ -1,0 +1,108 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  background: rgba(5, 6, 8, 0.7);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.logo-mark { color: var(--ink); }
+.logo-bracket { color: var(--accent); }
+
+.logo-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-bright);
+  font-weight: 400;
+}
+
+.logo-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink-dim);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-num {
+  font-size: 0.7rem;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a:hover .nav-num {
+  opacity: 1;
+}
+
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--border-bright);
+  border-radius: 100px;
+  color: var(--ink);
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.25rem; }
+  .logo-status { display: none; }
+  .nav-cta { font-size: 0.75rem; padding: 0.5rem 1rem; }
+}
